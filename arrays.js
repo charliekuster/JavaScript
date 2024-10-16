@@ -22,7 +22,7 @@ const palavras =  frase.trim().split(); //tira os espaços
 console.log(frase);
 console.log(palavras);
 
-const frase2 = "JavaStrip é incrível!"
+const frase2 = "JavaScript é incrível!"
 console.log(frase2.startsWith("Java")); //verifica padroes no começo da frase
 console.log(frase2.startsWith("lala")); //verifica padroes no começo da frase
 console.log(frase2.endsWith("!")); //verifica padroes no fim da frase
