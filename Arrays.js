@@ -1,4 +1,4 @@
-//Manipulações de Arrays
+//1 - Manipulações de Arrays
 
 const frutas = ["maça" , "Acerola"];
 frutas.unshift("laranja"); //Add elementos no comeco da lista
@@ -6,7 +6,7 @@ console.log(frutas);
 frutas.shift(frutas);
 console.log(frutas); //Remove primeiro elemento da lista
 
-//map, filter, reduce -> Arrow function
+// 1.1 - map, filter, reduce -> Arrow function
 
 //find -> retorna o primeiro elemento  criterio
 const numeros = [1, 2, 3, 4, 5, 6];
@@ -16,7 +16,7 @@ console.log(num_par);
 const num_pares = numeros.filter((num) => num % 2 === 0);
 console.log(num_pares);
 
-//manipulação de string
+// 1.2 manipulação de string
 const frase = "         ola, mundo!!!!    "
 const palavras =  frase.trim().split(); //tira os espaços
 console.log(frase);
@@ -27,7 +27,7 @@ console.log(frase2.startsWith("Java")); //verifica padroes no começo da frase
 console.log(frase2.startsWith("lala")); //verifica padroes no começo da frase
 console.log(frase2.endsWith("!")); //verifica padroes no fim da frase
 
-//exeções etratamento de erros
+// 1.3 exceções etratamento de erros
 const idade = 15;
 
 
