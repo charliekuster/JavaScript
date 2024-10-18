@@ -1,4 +1,7 @@
-//Manipulação de arrays
+// 3 - Avançando em JavaScript
+
+// 3.1 Manipulação de arrays
+
 const frutas = ["Maçã", "Banana"];
 frutas.unshift("Laranja"); // Adiciona "Laranja" ao começo do array
 console.log(frutas);
@@ -13,7 +16,7 @@ console.log(numeroPar); // 2
 const numerosPares = numeros.filter((num) => num % 2 === 0); // Filtra todos os números pares
 console.log(numerosPares); // [2, 4, 6]
 
-//Manipulação de strings avançada
+// 3.2 Manipulação de strings avançada
 const frase = "  Olá, mundo!  ";
 const palavras = frase.trim().split(" "); // Remove espaços extra e divide a string em palavras
 console.log(palavras); // ["Olá,", "mundo!"]
@@ -26,25 +29,25 @@ const frase2 = "JavaScript é incrível!";
 console.log(frase2.startsWith("Java")); // true
 console.log(frase2.endsWith("!")); // true
 
-//Exceções e tratamento de erros
+// 3.3 Exceções e tratamento de erros
 /*
 
 const idade = 15;
 if (idade < 18) {
-  throw new Error("Você deve ter pelo menos 18 anos."); 
-} //Aqui o programa não continua :\
+  throw new Error("Você deve ter pelo menos 18 anos.");
+}
 
-try {  
+try {
   const idade = 15;
   if (idade < 18) {
     throw new Error("Você deve ter pelo menos 18 anos.");
   }
 } catch (erro) {
-  console.log(erro.message); // "Você deve ter pelo menos 18 anos." - console.log(erro); // "Error: Você deve ter pelo menos 18 anos.""
-}  // O progama continua apos esse mensagem :)
+  console.log(erro.message); // "Você deve ter pelo menos 18 anos."
+}
 */
 
-//Callbacks
+// 3.4 Callbacks
 function cumprimentar(nome, callback) {
   console.log("Olá, " + nome);
   callback();
@@ -62,24 +65,20 @@ function mostrarMensagem() {
 
 setTimeout(mostrarMensagem, 3000); // Mostra a mensagem após 3 segundos
 
-//Promises
+// 3.5 Promises
 const promessa = new Promise((resolve, reject) => {
-    const condicao = true;
-    if(condicao){
-        resolve("A condição é verdadeira");
-    }else{
-        reject("A condição é falsa");
-    }
-})
+  const condicao = true;
+  if (condicao) {
+    resolve("A condição é verdadeira!");
+  } else {
+    reject("A condição é falsa!");
+  }
+});
 
-promessa.then((mensagem) => {
-    console.log(mensagem);
-}) 
-.catch((erros) => {
-    console.log(erro);
-})
+promessa
+  .then((mensagem) => console.log(mensagem)) // "A condição é verdadeira!"
+  .catch((erro) => console.log(erro));
 
-//Blibiotecas feitas que são "Promise based"
 const promessa1 = Promise.resolve(3);
 const promessa2 = new Promise((resolve, reject) =>
   setTimeout(resolve, 100, "foo")
@@ -87,38 +86,38 @@ const promessa2 = new Promise((resolve, reject) =>
 
 Promise.all([promessa1, promessa2]).then((valores) => console.log(valores)); // [3, "foo"]
 
-//Async/Await
+// 3.6 Async/Await
 async function obterValor() {
-    const promessa = new Promise((resolve, reject) => {
-      setTimeout(() => resolve("Valor obtido!"), 2000);
-    });
-  
-    const valor = await promessa;
-    console.log(valor); // "Valor obtido!"
-  }
-  
-  obterValor();
-  
-  /*
-  
-  async function obterValorComErro() {
-    try {
-      const promessa = new Promise((resolve, reject) => {
-        setTimeout(() => reject("Erro ao obter valor!"), 2000);
-      });
-  
-      const valor = await promessa;
-      console.log(valor);
-    } catch (erro) {
-      console.error(erro); // "Erro ao obter valor!"
-    }
-  }
-  
-  obterValorComErro();
-  
-  */
+  const promessa = new Promise((resolve, reject) => {
+    setTimeout(() => resolve("Valor obtido!"), 2000);
+  });
 
-//JSON
+  const valor = await promessa;
+  console.log(valor); // "Valor obtido!"
+}
+
+obterValor();
+
+/*
+
+async function obterValorComErro() {
+  try {
+    const promessa = new Promise((resolve, reject) => {
+      setTimeout(() => reject("Erro ao obter valor!"), 2000);
+    });
+
+    const valor = await promessa;
+    console.log(valor);
+  } catch (erro) {
+    console.error(erro); // "Erro ao obter valor!"
+  }
+}
+
+obterValorComErro();
+
+*/
+
+// 3.7 JSON
 const objeto = { nome: "João", idade: 30 };
 const jsonString = JSON.stringify(objeto);
 console.log(jsonString); // "{"nome":"João","idade":30}"
